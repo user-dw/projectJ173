@@ -20,6 +20,11 @@ public class UserEntity {
     @JoinColumn(name = "c_id")
     private CompanyEntity company;
 
+    /**权限对象*/
+    @ManyToOne
+    @JoinColumn(name = "p_id")
+    private PowerEntity power;
+
     /**用户名*/
     @Column(name = "u_userName")
     private String userName;

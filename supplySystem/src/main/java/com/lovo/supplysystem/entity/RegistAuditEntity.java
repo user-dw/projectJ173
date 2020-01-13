@@ -16,17 +16,13 @@ public class RegistAuditEntity {
     private int id;
 
     /**供应商对象*/
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "c_id")
     private CompanyEntity company;
 
-    /**审核信息状态*/
-    @Column(name = "r_tag")
-    private int tag; // 0：正常 1：冻结 2：注册未通过
-
     /**审核信息备注*/
-    @Column(name = "r_comment")
-    private String comment;
+    @Column(name = "r_content")
+    private String content;
 
     /**审核日期*/
     @Column(name = "r_date", columnDefinition = "TIMESTAMP")
@@ -48,20 +44,12 @@ public class RegistAuditEntity {
         this.company = company;
     }
 
-    public int getTag() {
-        return tag;
+    public String getContent() {
+        return content;
     }
 
-    public void setTag(int tag) {
-        this.tag = tag;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getDate() {

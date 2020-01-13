@@ -2,6 +2,7 @@ package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 供应商实体
@@ -19,6 +20,14 @@ public class CompanyEntity implements Serializable {
     /**供应商名称*/
     @Column(name = "c_companyName")
     private String companyName;
+
+    /**营业类型集合*/
+    @ManyToMany
+    @JoinTable(
+            name = "sys_company_scope",
+            joinColumns = {@JoinColumn(name = "c_id")},
+            inverseJoinColumns = {@JoinColumn(name = "s_id")})
+    private List<ScopeEntity> scopeList;
 
     /**法人名字*/
     @Column(name = "c_managerName")
@@ -40,6 +49,10 @@ public class CompanyEntity implements Serializable {
     @Column(name = "c_charter", columnDefinition = "TEXT")
     private String charter;
 
+    /**供应商状态*/
+    @Column(name = "c_status")
+    private int status; // 0：正常 1：冻结 2：注册未通过
+
     public int getId() {
         return id;
     }
@@ -54,6 +67,14 @@ public class CompanyEntity implements Serializable {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
+    }
+
+    public List<ScopeEntity> getScopeList() {
+        return scopeList;
+    }
+
+    public void setScopeList(List<ScopeEntity> scopeList) {
+        this.scopeList = scopeList;
     }
 
     public String getManagerName() {
@@ -94,5 +115,13 @@ public class CompanyEntity implements Serializable {
 
     public void setCharter(String charter) {
         this.charter = charter;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

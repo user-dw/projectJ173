@@ -15,11 +15,6 @@ public class PowerEntity {
     @Column(name = "p_id")
     private int id;
 
-    /**用户对象*/
-    @OneToOne
-    @JoinColumn(name = "u_id")
-    private UserEntity user;
-
     /**权限等级*/
     @Column(name = "p_level")
     private String level;
@@ -30,14 +25,6 @@ public class PowerEntity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public UserEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UserEntity user) {
-        this.user = user;
     }
 
     public String getLevel() {
