@@ -26,11 +26,11 @@ public class UserEntity {
     private PowerEntity power;
 
     /**用户名*/
-    @Column(name = "u_userName")
+    @Column(name = "u_userName", length = 24)
     private String userName;
 
     /**密码*/
-    @Column(name = "u_password")
+    @Column(name = "u_password", length = 24)
     private String password;
 
     public int getId() {

@@ -18,7 +18,7 @@ public class CompanyEntity implements Serializable {
     private int id;
 
     /**供应商名称*/
-    @Column(name = "c_companyName")
+    @Column(name = "c_companyName", length = 24)
     private String companyName;
 
     /**营业类型集合*/
@@ -30,19 +30,19 @@ public class CompanyEntity implements Serializable {
     private List<ScopeEntity> scopeList;
 
     /**法人名字*/
-    @Column(name = "c_managerName")
+    @Column(name = "c_managerName", length = 24)
     private String managerName;
 
     /**公司电话*/
-    @Column(name = "c_phone")
+    @Column(name = "c_phone", length = 24)
     private String phone;
 
     /**公司地址*/
-    @Column(name = "c_address")
+    @Column(name = "c_address", length = 255)
     private String address;
 
     /**工商编号*/
-    @Column(name = "c_aaumNub")
+    @Column(name = "c_aaumNub", length = 24)
     private String aaumNub;
 
     /**营业执照*/

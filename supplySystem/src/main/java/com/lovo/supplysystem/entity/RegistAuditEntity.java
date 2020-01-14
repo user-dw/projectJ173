@@ -20,8 +20,8 @@ public class RegistAuditEntity {
     @JoinColumn(name = "c_id")
     private CompanyEntity company;
 
-    /**审核信息备注*/
-    @Column(name = "r_content")
+    /**审核信息*/
+    @Column(name = "r_content", length = 255)
     private String content;
 
     /**审核日期*/

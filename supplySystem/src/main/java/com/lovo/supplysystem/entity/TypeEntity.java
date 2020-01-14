@@ -17,7 +17,7 @@ public class TypeEntity {
     private int id;
 
     /**商品类型*/
-    @Column(name = "t_content")
+    @Column(name = "t_content", length = 24)
     private String content;
 
     /**商品规格集合*/

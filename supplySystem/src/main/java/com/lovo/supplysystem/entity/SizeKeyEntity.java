@@ -21,7 +21,7 @@ public class SizeKeyEntity {
     private TypeEntity type;
 
     /**商品规格键*/
-    @Column(name = "s_sizeKey")
+    @Column(name = "s_sizeKey", length = 24)
     private String sizeKey;
 
     public int getId() {

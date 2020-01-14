@@ -16,7 +16,7 @@ public class ScopeEntity {
     private int id;
 
     /**营业类型*/
-    @Column(name = "s_content")
+    @Column(name = "s_content", length = 24)
     private String content;
 
     public int getId() {

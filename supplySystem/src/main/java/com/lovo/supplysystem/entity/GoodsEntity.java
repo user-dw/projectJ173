@@ -16,11 +16,11 @@ public class GoodsEntity {
     private int id;
 
     /**商品编号*/
-    @Column(name = "g_code")
+    @Column(name = "g_code", length = 48)
     private String code;
 
     /**商品名称*/
-    @Column(name = "g_goodsName")
+    @Column(name = "g_goodsName", length = 24)
     private String goodsName;
 
     /**商品类型*/
@@ -33,7 +33,7 @@ public class GoodsEntity {
     private int stock;
 
     /**商品图片*/
-    @Column(name = "g_image")
+    @Column(name = "g_image", length = 48)
     private String image;
 
     /**商品删除标记*/

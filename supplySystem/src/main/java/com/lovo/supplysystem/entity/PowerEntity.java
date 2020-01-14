@@ -16,7 +16,7 @@ public class PowerEntity {
     private int id;
 
     /**权限等级*/
-    @Column(name = "p_level")
+    @Column(name = "p_level", length = 16)
     private String level;
 
     public int getId() {
