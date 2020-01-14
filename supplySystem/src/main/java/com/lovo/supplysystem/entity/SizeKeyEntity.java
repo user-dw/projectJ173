@@ -1,13 +1,14 @@
 package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 商品规格键实体类
  */
 @Entity
 @Table(name = "sys_sizeKey")
-public class SizeKeyEntity {
+public class SizeKeyEntity implements Serializable {
 
     /**商品规格键id*/
     @Id

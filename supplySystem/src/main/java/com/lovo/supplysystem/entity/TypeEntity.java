@@ -1,6 +1,7 @@
 package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "sys_type")
-public class TypeEntity {
+public class TypeEntity implements Serializable {
 
     /**商品类型id*/
     @Id

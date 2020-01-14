@@ -1,13 +1,14 @@
 package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 供应商审核信息表
  */
 @Entity
 @Table(name = "sys_registAudit")
-public class RegistAuditEntity {
+public class RegistAuditEntity implements Serializable {
 
     /**审核信息id*/
     @Id

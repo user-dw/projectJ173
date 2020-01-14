@@ -1,14 +1,14 @@
 package com.lovo.supplysystem.entity;
 
-import javax.naming.Name;
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 退货订单实体类
  */
 @Entity
 @Table(name = "sys_return")
-public class ReturnEntity {
+public class ReturnEntity implements Serializable {
 
     /**退货订单id*/
     @Id
@@ -22,7 +22,7 @@ public class ReturnEntity {
 
     /**竞标信息对象*/
     @ManyToOne
-    @Column(name = "b_id")
+    @JoinColumn(name = "b_id")
     private BidEntity bid;
 
     /**商品编号*/

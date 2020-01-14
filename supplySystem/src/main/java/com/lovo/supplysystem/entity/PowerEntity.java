@@ -1,13 +1,14 @@
 package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 权限实体类
  */
 @Entity
 @Table(name = "sys_power")
-public class PowerEntity {
+public class PowerEntity implements Serializable {
 
     /**权限id*/
     @Id

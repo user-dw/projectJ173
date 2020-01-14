@@ -1,13 +1,14 @@
 package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 用户实体类
  */
 @Entity
 @Table(name = "sys_user")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
     /**用户id*/
     @Id
