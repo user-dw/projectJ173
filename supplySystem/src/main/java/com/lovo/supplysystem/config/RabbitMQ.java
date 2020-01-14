@@ -10,7 +10,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 /**
  * MQ配置类
  */
-@Configuration
+//@Configuration
 public class RabbitMQ {
 
     @Autowired

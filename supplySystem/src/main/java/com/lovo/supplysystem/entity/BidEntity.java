@@ -2,6 +2,7 @@ package com.lovo.supplysystem.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 
 /**
  * 竞标信息实体类
@@ -19,7 +20,7 @@ public class BidEntity implements Serializable {
     /**采购订单对象*/
     @OneToOne
     @JoinColumn(name = "p_id")
-    private purchaseEntity purchase;
+    private PurchaseEntity purchase;
 
     /**竞标信息编号*/
     @Column(name = "b_code", length = 48)
@@ -35,7 +36,7 @@ public class BidEntity implements Serializable {
 
     /**竞标日期*/
     @Column(name = "b_bidDate", columnDefinition = "TIMESTAMP")
-    private String bidDate;
+    private String bidDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
 
     /**中标状态*/
     @Column(name = "b_tag")
@@ -49,11 +50,11 @@ public class BidEntity implements Serializable {
         this.id = id;
     }
 
-    public purchaseEntity getPurchase() {
+    public PurchaseEntity getPurchase() {
         return purchase;
     }
 
-    public void setPurchase(purchaseEntity purchase) {
+    public void setPurchase(PurchaseEntity purchase) {
         this.purchase = purchase;
     }
 
