@@ -65,4 +65,12 @@ public class UserEntity implements Serializable {
     public void setCompany(CompanyEntity company) {
         this.company = company;
     }
+
+    public PowerEntity getPower() {
+        return power;
+    }
+
+    public void setPower(PowerEntity power) {
+        this.power = power;
+    }
 }

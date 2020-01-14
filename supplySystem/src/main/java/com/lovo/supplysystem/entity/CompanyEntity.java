@@ -51,7 +51,7 @@ public class CompanyEntity implements Serializable {
 
     /**供应商状态*/
     @Column(name = "c_status")
-    private int status; // 0：正常 1：冻结 2：注册未通过
+    private int status = 0; // 0：正在核审 1：正常 2：注册未通过
 
     public int getId() {
         return id;
