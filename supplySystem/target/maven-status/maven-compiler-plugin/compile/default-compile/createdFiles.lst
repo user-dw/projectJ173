@@ -1,2 +1,12 @@
-com\lovo\supplysystem\config\RabbitMQ.class
+com\lovo\supplysystem\entity\RegistAuditEntity.class
+com\lovo\supplysystem\controller\test.class
+com\lovo\supplysystem\SupplySystemMain.class
+com\lovo\supplysystem\entity\UserEntity.class
+com\lovo\supplysystem\entity\test.class
+com\lovo\supplysystem\service\test.class
+com\lovo\supplysystem\entity\PowerEntity.class
+com\lovo\supplysystem\config\SupplySystemConfig.class
 com\lovo\supplysystem\config\WebConfig.class
+com\lovo\supplysystem\config\RabbitMQ.class
+com\lovo\supplysystem\dao\test.class
+com\lovo\supplysystem\entity\CompanyEntity.class

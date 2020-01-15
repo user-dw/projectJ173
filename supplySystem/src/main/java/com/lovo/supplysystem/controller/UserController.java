@@ -1,8 +1,10 @@
 package com.lovo.supplysystem.controller;
 
 import com.lovo.supplysystem.entity.CompanyEntity;
+import com.lovo.supplysystem.entity.ScopeEntity;
 import com.lovo.supplysystem.entity.UserEntity;
 import com.lovo.supplysystem.service.ICompanyService;
+import com.lovo.supplysystem.service.IScopeService;
 import com.lovo.supplysystem.service.IUserService;
 import com.lovo.supplysystem.util.StringInfo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -17,6 +19,8 @@ import sun.misc.BASE64Encoder;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -26,6 +30,8 @@ public class UserController {
     IUserService userService;
     @Autowired
     ICompanyService companyService;
+    @Autowired
+    IScopeService scopeService;
 
     @RequestMapping("login")
     public ModelAndView login(String userName, String password, HttpSession session){
@@ -33,28 +39,40 @@ public class UserController {
         UserEntity user = userService.login(userName,password);
         if(user != null){
             session.setAttribute("user",user);
-            mv.setViewName("success.html");
+            mv.setViewName("page/main.html");
         }else {
-            mv.addObject("info","");
-             mv.setViewName("register.html");
+            mv.setViewName("userPage/login.html");
         }
+
 
         return mv;
     }
     @RequestMapping("register")
-    public ModelAndView register(UserEntity user, CompanyEntity company, @RequestParam("charterImg")MultipartFile file) throws IOException {
-        ModelAndView mv = new ModelAndView("login");
+    public ModelAndView register(UserEntity user, CompanyEntity company, ScopeEntity scope, @RequestParam("charterImg")MultipartFile file) throws IOException {
+        ModelAndView mv = new ModelAndView("regLoading.html");
+
+        scopeService.savaScope(scope);
         //图片转化base64
         company.setCharter(new BASE64Encoder().encode(file.getBytes()));
+        List<ScopeEntity> scopeList = new ArrayList<ScopeEntity>();
+        scopeList.add(scope);
+        company.setScopeList(scopeList);
         companyService.savaCompany(company);
-        user.setCompany(company);
 
+        user.setCompany(company);
         userService.register(user);
         return mv;
     }
     @RequestMapping("gotoLogin")
     public ModelAndView gotoLogin(){
-        ModelAndView mv = new ModelAndView("login.html");
+        ModelAndView mv = new ModelAndView("userPage/login.html");
+
+        return mv;
+
+    }
+    @RequestMapping("gotoreg")
+    public ModelAndView gotoreg(){
+        ModelAndView mv = new ModelAndView("userPage/reg.html");
 
         return mv;
 

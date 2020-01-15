@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="../../templates/static/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="../../templates/static/css/login.css" />
+
+	</head>
+
+	<body>
+		<div class="m-login-bg">
+			<div class="login" id="f">
+				<h1>SYSTEM LOGIN</h1>
+				<div class="m-login-warp">
+					<form class="layui-form" action="login" method="post">
+						<div class="layui-form-item">
+							<input type="text" autocomplete="off" name="userName" required lay-verify="required" placeholder="userName" class="layui-input">
+						</div>
+						<div class="layui-form-item">
+							<input type="text" autocomplete="off" name="password" required lay-verify="required" placeholder="password" class="layui-input">
+						</div>
+						<div class="layui-form-item m-login-btn">
+<!--							<button class="layui-btn"@click="regUser()"><i class="layui-icon">login</i></button>-->
+							<input type="submit" value="login" class="loginIn" @click="regUser()">
+						</div>
+					</form>
+						<a href="gotoreg" class="layui-btn"><i class="layui-icon">sign In</i></a>
+				</div>
+				<br><br>
+				<p class="copyright">LOVO 2019-2020 by GIAO</p>
+			</div>
+		</div>
+		<!--vue-->
+		<script src="../../templates/vue/Vue.js"></script>
+		<!--使用ajax 需要导入-->
+		<script  src="../../templates/vue/vue-resource.js"></script>
+		<!--获取URL的参数-->
+		<script  src="../../templates/vue/paragram.js"></script>
+		<script src="../../templates/static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../templates/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			// new Vue({
+			// 	el:"#f",
+			// 	data:{
+			//
+			// 	},
+			// 	methods: {
+			// 		regUser: function () {
+			//
+			// 		}
+			// 	}
+			// });
+		</script>
+
+	</body>
+
+</html>
