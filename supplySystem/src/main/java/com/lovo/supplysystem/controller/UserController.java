@@ -84,6 +84,7 @@ public class UserController {
         UserEntity user = userService.findByUserName(userName);
         if(user == null){
             info = StringInfo.USERNAME_REPEAT;
+
         }
         return info;
 
