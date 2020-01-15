@@ -84,7 +84,7 @@ public class UserController {
         UserEntity user = userService.findByUserName(userName);
         if(user == null){
             info = StringInfo.USERNAME_REPEAT;
-
+            //验证
         }
         return info;
 
